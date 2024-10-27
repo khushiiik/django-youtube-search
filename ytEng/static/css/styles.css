@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Fredoka", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	background-color: #fbe1e3;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 70vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-content {
+	flex-grow: 1;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo {
+	width: 240px;
+	height: 60px;
+	max-width: 100%;
+	height: auto;
+	margin-right: 20%;
+}
+
+.search-bar {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+}
+
+.search-input {
+	padding: 15px;
+	width: 100%;
+	max-width: 400px;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	outline: none;
+}
+
+.search-input:focus {
+	outline: none;
+}
+
+.search-button {
+	background-color: #ff0101;
+	border: none;
+	margin-left: 10px;
+	border-radius: 50%;
+	padding: 15px;
+	cursor: pointer;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	transition: box-shadow 0.3s ease;
+}
+
+.search-button img {
+	width: 20px;
+}
+
+.search-button:active {
+	box-shadow: none;
+}
+
+.search-button:focus {
+	outline: none;
+}
+
+.search-button:focus:not(:active) {
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.find {
+	padding: 5px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 2%;
+	transition: box-shadow 0.3s ease;
+	cursor: pointer;
+}
+
+
+.goto > img {
+	padding: 2px;
+}
+.find > a {
+	margin-left: 2px;
+}
+.find > p {
+	margin: 4px;
+}
+
+.find:active {
+	box-shadow: none;
+}
+
+.find:focus {
+	outline: none;
+}
+
+.find:focus:not(:active) {
+	box-shadow: 0 5px 9px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+	.find > p {
+		font-size: 12px;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		flex-direction: row;
+	}
+
+	.main-content {
+		padding: 50px;
+	}
+
+	.search-bar {
+		flex-direction: row;
+	}
+
+	.search-input {
+		width: 400px;
+	}
+}

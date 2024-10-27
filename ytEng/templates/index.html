@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Link Search</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="header">
+                <img src="{% static 'imgs/youTube.png' %}" alt="YouTube Logo" class="logo">
+            </div>
+
+            <!-- Search Form Section -->
+            <form method="GET" action="{% url 'index' %}" class="search-bar">
+                <input type="text" name="query" placeholder="Search..." class="search-input" value="{{ request.GET.query }}">
+                <button type="submit" class="search-button">
+                    <img src="{% static 'imgs/search.svg' %}" alt="Search Icon">
+                </button>
+            </form>
+
+            {% if results %}
+                {% for result in results %}
+                    <div class="find">
+                        <div class="goto">
+                            <img src="{% static 'imgs/goto.svg' %}" alt="goto">
+                        </div>
+                        
+                        
+                        <a href="{{ result.url }}" target="_blank">
+                            <p>{{ result.title }}</p>
+                        </a>
+                        
+                        <p>Channel: {{ result.channel }}</p>  
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
